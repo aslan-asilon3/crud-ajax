@@ -24,23 +24,26 @@
                         <div class="form-group">
                             <label for="field-1" class="control-label">Room Type</label>
                             {{-- <input type="text"  class="form-control" name="room_type" id="room_type" disabled> --}}
-                            <select  name="ratesplan_name"  id="ratesplan_id"  class="form-control">
-                            {{-- @foreach ($allotments as $allotment) --}}
-                                {{-- @foreach ($allotment->room_rate_plans as $rrps) --}}
-                                    {{-- @foreach ($rrps->types as $typ) --}}
-                                        {{-- @foreach ($typ as $t) --}}
-                                        @foreach ($allotments as $allotment)
-                                            @foreach ($allotment->room_rate_plans as $rrps)
-                                              @foreach ($rrps->types as $typ)
-                                                <option class="" value="{{ $typ->id }}" >{{ $typ->room_name }}</option>
-                                              @endforeach
-                                            @endforeach
+                            <select  name="roomtype"  id="roomtype"  class="form-control">
+                                @foreach ($rooms as $room)
+                                <option class="" value="{{ $room->id }}" >{{ $room->room_name }}</option>
+                                @endforeach
+                                {{-- @foreach ($allotments as $allotment)
+                                    @foreach ($allotment->room_rate_plans as $rrps)
+                                        @foreach ($rrps->types as $typ)
+                                        <option class="" value="{{ $typ->id }}" >{{ $typ->room_name }}</option>
                                         @endforeach
-                                        {{-- @endforeach --}}
-                                    {{-- @endforeach --}}
-                                {{-- @endforeach --}}
-                            {{-- @endforeach --}}
-                            </select>
+                                    @endforeach
+                                @endforeach --}}
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label for="field-1" class="control-label">Rates plan</label>
+                            {{-- <input type="text"  class="form-control" name="room_type" id="room_type" disabled> --}}
+                            <select  name="ratesplan_name"  id="ratesplan_id"  class="form-control">
+
                         </div>
                     </div>
 
@@ -49,21 +52,10 @@
                         <div class="form-group">
                             <label for="field-1" class="control-label">Available Rate Plan</label>
                             <p style="margin:0px;font-weight:normal;">select available rate plan for this room</p>
-                            {{-- <select  name="ratesplan_name"  id="ratesplan_id" onchange="myFunction(this)" class="form-control">
+                            <select  name="ratesplan_name"  id="ratesplan_id" onchange="" class="form-control">
                                 <option hidden> Select Rate Plan</option>
-                                {{-- @foreach ($rooms as $room)
-                                    @foreach ($room->room_rate_plans as $rrrp)
-                                        <option hidden class="" data-israteplanactive="{{ $rrrp->is_rate_plan_active  }}" value="" ></option>
-                                        @foreach ($rrrp->rate_plans as $rtp)
-                                          <option class="rts"
-                                                    data-extrabedrate="{{ $rtp->extrabed_rate }}" 
-                                                    data-baserate="{{ $rtp->base_rate }}" 
-                                                    value="{{ $rtp->id }}" >{{ $rtp->rate_name }}</option>
-                                        @endforeach
-                                    @endforeach
-                                @endforeach --}}
-                            {{-- </select> --}}
-                            <select  name="ratesplan_name"  id="ratesplan_id" class="form-control">
+                            </select>
+                            {{-- <select  name="ratesplan_name"  id="ratesplan_id" class="form-control"> --}}
                         </div>
                     </div>
 

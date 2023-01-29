@@ -11,7 +11,8 @@ class AllotmentController extends Controller
 {
     public function index()
     {
+        $rooms = RoomType::all();
         $allotments = Allotment::all();
-        return view('allotments.index', compact('allotments'));
+        return view('allotments.index', compact('allotments','rooms'));
     }
 }
